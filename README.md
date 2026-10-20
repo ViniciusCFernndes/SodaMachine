@@ -20,6 +20,8 @@ Os botões da máquina são:
 * **R**: Selecionar uma garrafa de refrigerante, ao preço de 両2,00.
 * **D**: Devolver o valor que está atualmente na máquina.
 * **Q**: Liga e desliga a máquina. 
+* **I50**: insere moeda de 0,50 na máquina. 
+* **I100**: insere moeda de 1,00 na máquina. 
 
 ### Q: Estados
 * **Máquina desligada**
@@ -30,7 +32,7 @@ Os botões da máquina são:
 * **Máquina ligada com saldo 2,00**
 * **Máquina ligada com saldo 2,50**
 
-### S: (q0, Ação) -> (q1) // completar aqui
+### S: (q0, Ação) -> (q1) // completar aqui 
 * 
 * 
 
