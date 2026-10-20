@@ -13,6 +13,33 @@ Os botões da máquina são:
 * D: Devolver o valor inserido pelo usuário ou o troco, caso ele já tenha recebido uma bebida de valor menor ao montante inserido na máquina. Considere que a máquina sempre tem troco.
 * Q: Este botão fica escondido e será acionado pelo responsável pela máquina na hora de ligá-la ou desligá-la. O botão somente pode ser acionado quando o saldo a ser devolvido for 両0,00.
 
+# Definição da quintupla da máquina:
+## M(A, Q, S, q0, F);
+### A: Ações
+* **A**: Selecionar uma garrafa de água, ao preço de 両1,50.
+* **R**: Selecionar uma garrafa de refrigerante, ao preço de 両2,00.
+* **D**: Devolver o valor que está atualmente na máquina.
+* **Q**: Liga e desliga a máquina. 
+
+### Q: Estados
+* **Máquina desligada**
+* **Máquina ligada com saldo 0**
+* **Máquina ligada com saldo 0,50**
+* **Máquina ligada com saldo 1,00**
+* **Máquina ligada com saldo 1,50**
+* **Máquina ligada com saldo 2,00**
+* **Máquina ligada com saldo 2,50**
+
+### S: (q0, Ação) -> (q1) // completar aqui
+* 
+* 
+
+### q0: Estado inicial
+* **Máquina desligada**
+
+### F: Estado Final
+* **Máquina desligada**
+
 # Diagrama
 
 # Implementação
