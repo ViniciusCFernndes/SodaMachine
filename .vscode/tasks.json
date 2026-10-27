@@ -1,0 +1,26 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ arquivo de build ativo",
+            "command": "g++",
+            "args": [
+                "${workspaceFolder}/src/sodamachine.cpp",
+                "-o",
+                "${workspaceFolder}/sodamachine"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarefa gerada pelo Depurador."
+        }
+    ],
+    "version": "2.0.0"
+}
