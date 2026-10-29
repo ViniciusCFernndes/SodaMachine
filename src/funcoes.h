@@ -27,7 +27,7 @@ public:
         estado = DESLIGADO;
     }
 
-    void printSaldo()
+    void printSaldo() // Função que printa o saldo atual
     {
         switch (estado)
         {
@@ -59,7 +59,7 @@ public:
         printSaldo();
     }
 
-    void venderAgua()
+    void venderAgua() // // Função caso o usuário escolha comprar um água com base no saldo disponível
     {
         switch (estado)
         {
@@ -91,7 +91,7 @@ public:
         printSaldo();
     }
 
-    void venderRefrigerante()
+    void venderRefrigerante() // Função caso o usuário escolha comprar um refrigerante com base no saldo disponível
     {
         switch (estado)
         {
@@ -121,7 +121,7 @@ public:
         printSaldo();
     }
 
-    void inserir050()
+    void inserir050() // Função caso seja inserida uma moeda de 0,50 ienes
     {
         switch (estado)
         {
@@ -138,7 +138,6 @@ public:
             estado = SALDO_200;
             break;
         case SALDO_200:
-
             estado = SALDO_250;
             break;
         case SALDO_250:
@@ -148,7 +147,7 @@ public:
         printSaldo();
     }
 
-    void inserir100()
+    void inserir100() // Função caso seja inserida uma moeda de 1,00 ienes
     {
         switch (estado)
         {
@@ -165,7 +164,6 @@ public:
             estado = SALDO_200;
             break;
         case SALDO_150:
-
             estado = SALDO_250;
             break;
         case SALDO_200:
@@ -178,7 +176,7 @@ public:
         printSaldo();
     }
 
-    void devolverSaldo()
+    void devolverSaldo() // Função caso o usuário queira todo seu dinheiro de volta
     {
         switch (estado)
         {
@@ -205,7 +203,7 @@ public:
         printSaldo();
     }
 
-    void ligarDesligar()
+    void ligarDesligar() // Função para desligar e ligar a máquina
     {
         if (estado == DESLIGADO)
         {
