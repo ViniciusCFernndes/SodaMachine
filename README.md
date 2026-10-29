@@ -19,7 +19,7 @@ Os botões da máquina são:
 * **A**: Selecionar uma garrafa de água, ao preço de 両1,50.
 * **R**: Selecionar uma garrafa de refrigerante, ao preço de 両2,00.
 * **D**: Devolver o valor que está atualmente na máquina.
-* **Q**: Liga e desliga a máquina. 
+* **Q**: Liga e desliga a máquina.      
 * **I50**: insere moeda de 0,50 na máquina. 
 * **I100**: insere moeda de 1,00 na máquina. 
 
