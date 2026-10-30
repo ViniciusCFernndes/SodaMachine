@@ -33,8 +33,17 @@ Os botões da máquina são:
 * **Máquina ligada com saldo 2,50**
 
 ### S: (q0, Ação) -> (q1) // completar aqui 
-* 
-* 
+
+| Estado atual | A | R | D | Q | I50 | I100 |
+|--------------|---|---|---|---|-----|------|
+| **Máquina desligada** | — | — | — | Saldo 0 | — | — |
+| **Saldo 0** | permanece | permanece | — | Desligada | Saldo 0,50 | Saldo 1,00 |
+| **Saldo 0,50** | permanece | permanece | Saldo 0 | permanece | Saldo 1,00 | Saldo 1,50 |
+| **Saldo 1,00** | permanece | permanece | Saldo 0 | permanece | Saldo 1,50 | Saldo 2,00 |
+| **Saldo 1,50** | Saldo 0 | permanece | Saldo 0 | permanece | Saldo 2,00 | Saldo 2,50 |
+| **Saldo 2,00** | Saldo 0,50 | Saldo 0 | Saldo 0 | permanece | Saldo 2,50 | permanece |
+| **Saldo 2,50** | Saldo 1,00 | Saldo 0,50 | Saldo 0 | permanece | permanece | permanece |
+ 
 
 ### q0: Estado inicial
 * **Máquina desligada**
@@ -44,7 +53,22 @@ Os botões da máquina são:
 
 # Diagrama
 
+[Visite o diagrama](https://hub.camunda.io/share/29ef4602-8ce9-4c3a-a07e-597fe56af249)
+
 # Implementação
+
+compilador C++ com suporte ao padrão C++17, como o g++. Os comandos abaixo devem ser executados no terminal dentro da pasta que contém os arquivos c++, ".cpp".
+
+## Windows:
+* g++ sodamachine.cpp -o soda
+.\soda
+
+## Linux:
+* g++ sodamachine.cpp -o soda  
+./soda
+
+
+
 
 # Autores
 
