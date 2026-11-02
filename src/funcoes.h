@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -8,6 +9,7 @@ class SodaMachine
 private:
     int total_agua;
     int total_refrigerante;
+    float total_vendas;
 
 public:
     // constantes de estados
@@ -24,6 +26,7 @@ public:
     {
         total_agua = 0;
         total_refrigerante = 0;
+        total_vendas = 0;
         estado = DESLIGADO;
     }
 
@@ -64,27 +67,30 @@ public:
         switch (estado)
         {
         case SALDO_ZERO:
-            cout << "Não há crédito" << std::endl;
+            cout << "Não há crédito" << endl;
             break;
         case SALDO_050:
-            cout << "Saldo insuficiente" << std::endl;
+            cout << "Saldo insuficiente" << endl;
             break;
         case SALDO_100:
-            cout << "Saldo insuficiente" << std::endl;
+            cout << "Saldo insuficiente" << endl;
             break;
         case SALDO_150:
-            cout << "Água entregue" << std::endl;
+            cout << "Água entregue" << endl;
             total_agua += 1;
+            total_vendas += 1.50;
             estado = SALDO_ZERO;
             break;
         case SALDO_200:
-            cout << "Água entregue" << std::endl;
+            cout << "Água entregue" << endl;
             total_agua += 1;
+            total_vendas += 1.50;
             estado = SALDO_050;
             break;
         case SALDO_250:
-            cout << "Água entregue" << std::endl;
+            cout << "Água entregue" << endl;
             total_agua += 1;
+            total_vendas += 1.50;
             estado = SALDO_100;
             break;
         }
@@ -96,25 +102,27 @@ public:
         switch (estado)
         {
         case SALDO_ZERO:
-            cout << "Não há crédito." << std::endl;
+            cout << "Não há crédito." << endl;
             break;
         case SALDO_050:
-            cout << "Saldo insuficiente" << std::endl;
+            cout << "Saldo insuficiente" << endl;
             break;
         case SALDO_100:
-            cout << "Saldo insuficiente" << std::endl;
+            cout << "Saldo insuficiente" << endl;
             break;
         case SALDO_150:
-            cout << "Saldo insuficiente" << std::endl;
+            cout << "Saldo insuficiente" << endl;
             break;
         case SALDO_200:
             cout << "Refrigerante entregue" << endl;
             total_refrigerante += 1;
+            total_vendas += 2.00;
             estado = SALDO_ZERO;
             break;
         case SALDO_250:
-            cout << "Refrigerante entregue" << std::endl;
+            cout << "Refrigerante entregue" << endl;
             total_refrigerante += 1;
+            total_vendas += 2.00;
             estado = SALDO_050;
             break;
         }
@@ -141,7 +149,7 @@ public:
             estado = SALDO_250;
             break;
         case SALDO_250:
-            cout << "Moeda devolvida." << std::endl;
+            cout << "Moeda devolvida." << endl;
             break;
         }
         printSaldo();
@@ -156,21 +164,19 @@ public:
             estado = SALDO_100;
             break;
         case SALDO_050:
-
             estado = SALDO_150;
             break;
         case SALDO_100:
-
             estado = SALDO_200;
             break;
         case SALDO_150:
             estado = SALDO_250;
             break;
         case SALDO_200:
-            cout << "Moeda devolvida." << std::endl;
+            cout << "Moeda devolvida." << endl;
             break;
         case SALDO_250:
-            cout << "Moeda devolvida." << std::endl;
+            cout << "Moeda devolvida." << endl;
             break;
         }
         printSaldo();
@@ -181,22 +187,22 @@ public:
         switch (estado)
         {
         case SALDO_ZERO:
-            cout << "Não há crédito." << std::endl;
+            cout << "Não há crédito." << endl;
             break;
         case SALDO_050:
-            cout << "Devolvido: $0.50" << std::endl;
+            cout << "Devolvido: $0.50" << endl;
             break;
         case SALDO_100:
-            cout << "Devolvido: $1.00" << std::endl;
+            cout << "Devolvido: $1.00" << endl;
             break;
         case SALDO_150:
-            cout << "Devolvido: $1.50" << std::endl;
+            cout << "Devolvido: $1.50" << endl;
             break;
         case SALDO_200:
-            cout << "Devolvido: $2.00" << std::endl;
+            cout << "Devolvido: $2.00" << endl;
             break;
         case SALDO_250:
-            cout << "Devolvido: $2.50" << std::endl;
+            cout << "Devolvido: $2.50" << endl;
             break;
         }
         estado = SALDO_ZERO;
@@ -208,22 +214,24 @@ public:
         if (estado == DESLIGADO)
         {
             estado = SALDO_ZERO;
-            cout << "Máquina funcionando." << std::endl;
+            cout << "Máquina funcionando." << endl;
             printSaldo();
         }
         else if (estado != DESLIGADO && estado != SALDO_ZERO)
         {
-            cout << "Não é possível desligar a máquina com saldo." << std::endl;
+            cout << "Não é possível desligar a máquina com saldo." << endl;
             printSaldo();
         }
         else if (estado == SALDO_ZERO)
         {
             estado = DESLIGADO;
+            cout.precision(3);
             cout << "Saldo das vendas: \n"
                  << total_agua << " água(s)\n"
-                 << total_refrigerante << " refrigerante(s)."
-                 << std::endl;
-            cout << "Máquina desligada." << std::endl;
+                 << total_refrigerante << " refrigerante(s)." << endl
+                 << "Total vendas: $ " << fixed << setprecision(2)  << total_vendas 
+                 << endl;
+            cout << "Máquina desligada." << endl;
         }
     }
 };
